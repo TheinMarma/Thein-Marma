@@ -1,45 +1,42 @@
-import socials from "@/data/socials.json";
+import { socialLinks, contact } from "@/data/portfolio";
 
-export function SocialIcon({
-  name,
-  size = 20,
+export function SocialLinks({
+  includeContact = false,
 }: {
-  name: string;
-  size?: number;
+  includeContact?: boolean;
 }) {
-  const social = socials.find((item) => item.name === name);
-  if (!social) return null;
   return (
-    <svg
-      viewBox={social.icon.viewBox}
-      width={size}
-      height={size}
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      {social.icon.paths.map((d, index) => (
-        <path key={index} d={d} />
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-zinc-500">
+      {socialLinks.map((link, index) => (
+        <span key={link.name} className="inline-flex items-center gap-3">
+          {index > 0 && (
+            <span aria-hidden="true" className="text-zinc-300">
+              ·
+            </span>
+          )}
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
+            {link.name}
+          </a>
+        </span>
       ))}
-    </svg>
-  );
-}
-
-export function SocialLinks() {
-  return (
-    <div className="flex items-center gap-5 text-zinc-500">
-      {socials.map((social) => (
-        <a
-          key={social.name}
-          href={social.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={social.name}
-          title={social.name}
-          className="hover:text-foreground"
-        >
-          <SocialIcon name={social.name} />
-        </a>
-      ))}
+      {includeContact && (
+        <>
+          <span aria-hidden="true" className="text-zinc-300">
+            ·
+          </span>
+          <a
+            href={`mailto:${contact.email}`}
+            className="text-foreground hover:text-zinc-500"
+          >
+            Get in Touch ↗
+          </a>
+        </>
+      )}
     </div>
   );
 }

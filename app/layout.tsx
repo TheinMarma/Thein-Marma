@@ -6,13 +6,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Piyush Garg — Software Engineer, Content Creator, Educator",
-    template: "%s · Piyush Garg",
+    default: "Thein Marma — WordPress Developer & SaaS Builder",
+    template: "%s · Thein Marma",
   },
   description:
-    "I build software and teach people how to build software. Founder of Teachyst, a white-labeled LMS that helps educators monetize their content globally.",
+    "WordPress developer and SaaS builder based in Bangladesh. 4+ years building websites for clients worldwide. Currently building Whatisdue and aaine.",
   robots: { index: false, follow: false },
-  icons: { icon: "/assets/18c0bcdf4cea0f.png" },
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -24,7 +24,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main className="flex-1">{children}</main>
           <footer className="mt-24 flex flex-col gap-4 border-t border-zinc-200 py-8 sm:flex-row sm:items-center sm:justify-between">
             <SocialLinks />
-            <span className="font-mono text-xs text-zinc-400">© 2026</span>
+            <span className="font-mono text-xs text-zinc-400">
+              © 2026 Thein Marma. Built with care.
+            </span>
           </footer>
         </div>
       </body>

@@ -1,54 +1,32 @@
-export type ContentItem = {
+export type PortfolioItem = {
   title: string;
-  href: string;
-  description: string;
-  domain: string;
-  icon?: { viewBox: string; paths: string[] };
+  subtitle: string;
+  paragraphs: string[];
+  href?: string;
 };
 
-export function Arrow() {
+export function ContentCard({ item }: { item: PortfolioItem }) {
   return (
-    <span
-      aria-hidden="true"
-      className="font-mono text-sm text-zinc-400 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
-    >
-      ↗
-    </span>
-  );
-}
-
-export function ContentCard({ item }: { item: ContentItem }) {
-  return (
-    <a
-      href={item.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex flex-col gap-2 border border-zinc-200 p-4 transition-colors hover:border-zinc-400 hover:bg-zinc-50"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-start gap-2.5">
-          {item.icon && (
-            <svg
-              aria-hidden="true"
-              className="mt-0.5 shrink-0 text-lg text-foreground"
-              viewBox={item.icon.viewBox}
-              width="1em"
-              height="1em"
-              fill="currentColor"
-            >
-              {item.icon.paths.map((d, i) => (
-                <path key={i} d={d} />
-              ))}
-            </svg>
-          )}
-          <h3 className="font-medium text-foreground">{item.title}</h3>
-        </div>
-        <Arrow />
-      </div>
-      <p className="text-sm leading-6 text-zinc-600">{item.description}</p>
-      <span className="mt-1 font-mono text-xs text-zinc-400">
-        {item.domain}
-      </span>
-    </a>
+    <article className="flex flex-col gap-3 border border-zinc-200 p-5">
+      <h3 className="font-semibold text-foreground">{item.title}</h3>
+      <p className="text-sm font-medium leading-6 text-foreground">
+        {item.subtitle}
+      </p>
+      {item.paragraphs.map((text) => (
+        <p key={text} className="text-sm leading-6 text-zinc-600">
+          {text}
+        </p>
+      ))}
+      {item.href && (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1 w-fit font-mono text-xs text-zinc-500 underline decoration-zinc-300 underline-offset-4 hover:text-foreground"
+        >
+          {item.href.replace("https://", "")} <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </article>
   );
 }

@@ -1,6 +1,6 @@
-# Portfolio
+# Thein Marma — Portfolio
 
-A Next.js App Router recreation of [piyushgarg.dev](https://www.piyushgarg.dev/), built with React, TypeScript, Tailwind CSS, and npm. The project lives directly in this repository root.
+Personal portfolio for a WordPress developer and SaaS builder based in Bangladesh. Built with Next.js App Router, React, TypeScript, Tailwind CSS, and npm.
 
 ## Development
 
@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. Edit files in `app/`, `components/`, and `data/`; Next.js refreshes the page as you work.
+Open http://localhost:3000.
 
 ## Production
 
@@ -21,19 +21,16 @@ npm run build
 npm start
 ```
 
-`npm run build` produces a static export in `out/`. `npm start` serves that export on port 3000. This project intentionally uses static export, so it does not use `next start`. Hosting configuration is in `.openai/hosting.json`.
+The production build exports to `out/`. `npm start` serves the static export. Hosting configuration is in `.openai/hosting.json`.
 
-## Structure
+## Editing
 
-- `app/` — routes for home, courses, gadgets, and guestbook; layout, metadata, fonts, and global styles.
-- `components/` — navigation, profile, activity calendar, cards, social links, cohorts, and the guestbook form.
-- `data/` — editable content and snapshots of videos, activity, courses, products, and guestbook entries.
-- `public/assets/` — locally hosted images and fonts.
-- `postcss.config.mjs` — Tailwind CSS v4 PostCSS integration; theme values live in `app/globals.css`.
-- `next.config.ts` — Next.js static-export configuration.
+- `data/portfolio.ts` — profile, about copy, products, selected work, experience, technologies, social links, and contact details.
+- `app/page.tsx` — portfolio sections and contact layout.
+- `components/` — shared navigation, profile, cards, and social links.
+- `app/layout.tsx` — metadata and footer.
+- `app/globals.css` — Tailwind theme and global styles.
+- `app/icon.svg` — TM monogram favicon.
+- `public/assets/` — locally hosted fonts.
 
-The npm lockfile is committed for repeatable installs. Generated output and dependencies are ignored by Git.
-
-## Behavior
-
-The design and public links follow the reference captured November 15, 2026. Activity, statistics, and original guestbook entries are snapshots. Guestbook submissions use browser local storage, preserving the previous `portfolio-guestbook-v1` entries. No GitHub authentication, shared database, or remote posting is configured.
+Get in Touch opens an email to hello@theinmarma.dev. The Contact section also includes the alternate email and Upwork profile. JMG Digital Studios has no outbound project link because none was supplied.
