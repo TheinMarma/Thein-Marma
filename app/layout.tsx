@@ -1,8 +1,38 @@
+import localFont from "next/font/local";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navigation } from "@/components/navigation";
 import { SocialLinks } from "@/components/social-links";
 import "./globals.css";
+
+const plexSans = localFont({
+  src: [
+    {
+      path: "./fonts/ibm-plex-sans-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ibm-plex-sans-latin-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ibm-plex-sans-latin-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-plex-sans",
+  display: "swap",
+});
+const plexMono = localFont({
+  src: "./fonts/ibm-plex-mono-latin-400-normal.woff2",
+  weight: "400",
+  style: "normal",
+  variable: "--font-plex-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +47,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html
+      lang="en"
+      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+    >
       <body className="min-h-full">
         <div className="mx-auto flex min-h-screen max-w-2xl flex-col px-6">
           <Navigation />

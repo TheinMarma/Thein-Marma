@@ -31,6 +31,6 @@ The production build exports to `out/`. `npm start` serves the static export. Ho
 - `app/layout.tsx` — metadata and footer.
 - `app/globals.css` — Tailwind theme and global styles.
 - `app/icon.svg` — TM monogram favicon.
-- `public/assets/` — locally hosted fonts.
+- `app/fonts/` — self-hosted IBM Plex Sans and IBM Plex Mono, loaded through `next/font/local`, with their licenses.
 
 Get in Touch opens an email to hello@theinmarma.dev. The Contact section also includes the alternate email and Upwork profile. JMG Digital Studios has no outbound project link because none was supplied.
