@@ -16,17 +16,16 @@ export function Profile() {
         <p className="hero-role">{profile.role}</p>
       </div>
       <figure className="portrait">
-        <Image
-          src={portrait}
-          alt="Thein Marma"
-          width={500}
-          height={500}
-          sizes="(max-width: 600px) 140px, 224px"
-          preload
-        />
-        <figcaption className="eyebrow">
-          Building with care, from Bangladesh.
-        </figcaption>
+        <div className="portrait-frame">
+          <Image
+            src={portrait}
+            alt="Thein Marma"
+            width={500}
+            height={500}
+            sizes="(max-width: 520px) 88px, (max-width: 760px) 140px, (max-width: 1000px) 220px, 260px"
+            preload
+          />
+        </div>
       </figure>
       <div className="hero-copy">
         {profile.introduction.map((text) => (
