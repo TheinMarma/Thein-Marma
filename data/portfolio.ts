@@ -74,21 +74,24 @@ export const work = [
 export const experience = [
   {
     role: "WordPress Developer",
-    team: "Dragon Digitals · Full-time",
+    team: "JMG Digital Studios · Freelance",
+    dates: "Sep 2025 – Present",
     description:
-      "Developed and maintained WordPress websites for client projects, working with page builders, custom functionality, responsive layouts, and ongoing website improvements.",
+      "Working with JMG Digital Studios on a project basis, developing and customizing WordPress websites, building responsive layouts, implementing custom functionality, and maintaining client websites.",
   },
   {
     role: "WordPress Developer",
-    team: "JMG Digital Studios · Freelance",
+    team: "Dragon Digitals · Full-time",
+    dates: "Nov 2025 – Oct 2026",
     description:
-      "Collaborated on project-based WordPress development, website customization, and improvements for agency clients.",
+      "Developed and maintained WordPress websites for clients, including responsive Elementor layouts, custom PHP and JavaScript functionality, WooCommerce integrations, and website performance improvements.",
   },
   {
-    role: "Independent Developer",
-    team: "Client Projects & SaaS Products",
+    role: "WordPress Developer",
+    team: "Reap Agency UK · Full-time",
+    dates: "Mar 2024 – Jul 2024",
     description:
-      "Worked directly with clients on website development projects while independently building SaaS products such as Whatisdue and aaine.",
+      "Worked as a WordPress developer at a UK-based Shopify Plus agency, contributing to website development and client projects in a remote team environment.",
   },
 ];
 

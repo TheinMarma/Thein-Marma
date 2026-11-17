@@ -1,5 +1,3 @@
-import Image from "next/image";
-import portrait from "@/app/TheinMarma Profile.png";
 import { profile, contact } from "@/data/portfolio";
 import { SocialLinks } from "./social-links";
 
@@ -15,18 +13,6 @@ export function Profile() {
         </h1>
         <p className="hero-role">{profile.role}</p>
       </div>
-      <figure className="portrait">
-        <div className="portrait-frame">
-          <Image
-            src={portrait}
-            alt="Thein Marma"
-            width={500}
-            height={500}
-            sizes="(max-width: 520px) 88px, (max-width: 760px) 140px, (max-width: 1000px) 220px, 260px"
-            preload
-          />
-        </div>
-      </figure>
       <div className="hero-copy">
         {profile.introduction.map((text) => (
           <p key={text}>{text}</p>

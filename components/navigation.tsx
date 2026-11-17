@@ -1,12 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
+import portrait from "@/app/TheinMarma Profile.png";
 
 export function Navigation() {
   return (
     <nav aria-label="Main navigation" className="navigation">
       <Link href="/" className="wordmark" aria-label="Thein Marma home">
-        <span className="brand-mark" aria-hidden="true">
-          tm<span>·</span>
-        </span>
+        <Image
+          src={portrait}
+          alt=""
+          width={44}
+          height={44}
+          sizes="44px"
+          className="brand-avatar"
+        />
         <span className="wordmark-caption">
           Developer
           <br />

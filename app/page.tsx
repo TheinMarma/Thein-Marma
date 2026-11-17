@@ -103,7 +103,7 @@ export default function HomePage() {
         />
         <div className="section-body">
           <p className="section-intro">
-            Some of the teams I&apos;ve worked with.
+            A look at my professional experience in web development.
           </p>
           <div className="experience-list">
             {experience.map((item) => (
@@ -112,6 +112,7 @@ export default function HomePage() {
                   <h3>{item.role}</h3>
                   <p>{item.team}</p>
                 </div>
+                <p className="experience-date">{item.dates}</p>
                 <p>{item.description}</p>
               </article>
             ))}
