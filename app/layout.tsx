@@ -2,7 +2,6 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navigation } from "@/components/navigation";
-import { SocialLinks } from "@/components/social-links";
 import "./globals.css";
 
 const plexSans = localFont({
@@ -52,14 +51,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <div className="mx-auto flex min-h-screen max-w-2xl flex-col px-6">
+        <div className="site-shell">
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
           <Navigation />
-          <main className="flex-1">{children}</main>
-          <footer className="mt-24 flex flex-col gap-4 border-t border-zinc-200 py-8 sm:flex-row sm:items-center sm:justify-between">
-            <SocialLinks />
-            <span className="font-mono text-xs text-zinc-400">
-              © 2026 Thein Marma. Built with care.
-            </span>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <footer className="site-footer">
+            <span>© 2026 Thein Marma. Built with care.</span>
+            <a href="#main-content">
+              Back to top <span aria-hidden="true">↑</span>
+            </a>
           </footer>
         </div>
       </body>

@@ -1,5 +1,6 @@
 import { Profile } from "@/components/profile";
 import { ContentCard } from "@/components/content-card";
+import { SectionHeading } from "@/components/section-heading";
 import { SocialLinks } from "@/components/social-links";
 import {
   about,
@@ -10,164 +11,180 @@ import {
   contact,
 } from "@/data/portfolio";
 
-const headingClass = "font-mono text-sm uppercase tracking-wider text-zinc-500";
-
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-14 py-8">
+    <>
       <Profile />
       <section
         id="about"
         aria-labelledby="about-heading"
-        className="flex flex-col gap-4"
+        className="portfolio-section about-section"
       >
-        <h2 id="about-heading" className={headingClass}>
-          About
-        </h2>
-        {about.map((text) => (
-          <p key={text} className="leading-7 text-zinc-600">
-            {text}
-          </p>
-        ))}
+        <SectionHeading number="01" title="About" id="about-heading" />
+        <div className="section-body about-copy">
+          {about.map((text) => (
+            <p key={text}>{text}</p>
+          ))}
+          <div className="about-note">
+            <span className="note-number">4+</span>
+            <span>
+              Years building websites
+              <br />
+              for businesses &amp; agencies
+            </span>
+          </div>
+        </div>
       </section>
       <section
         id="products"
         aria-labelledby="products-heading"
-        className="flex flex-col gap-4"
+        className="portfolio-section"
       >
-        <div className="flex flex-col gap-1.5">
-          <h2 id="products-heading" className={headingClass}>
-            Products
-          </h2>
-          <p className="text-zinc-600">
+        <SectionHeading number="02" title="Products" id="products-heading" />
+        <div className="section-body">
+          <p className="section-intro">
             Some of the products I&apos;m building.
           </p>
-        </div>
-        <div className="flex flex-col gap-3">
-          {products.map((item) => (
-            <ContentCard key={item.title} item={item} />
-          ))}
+          <div className="product-grid">
+            {products.map((item, index) => (
+              <ContentCard key={item.title} item={item} index={index} />
+            ))}
+          </div>
         </div>
       </section>
       <section
         id="work"
         aria-labelledby="work-heading"
-        className="flex flex-col gap-4"
+        className="portfolio-section"
       >
-        <div className="flex flex-col gap-1.5">
-          <h2 id="work-heading" className={headingClass}>
-            Selected Work
-          </h2>
-          <p className="text-zinc-600">
+        <SectionHeading number="03" title="Selected work" id="work-heading" />
+        <div className="section-body">
+          <p className="section-intro">
             A few websites I&apos;ve worked on for clients and businesses.
           </p>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {work.map((item) => (
-            <ContentCard key={item.title} item={item} />
-          ))}
+          <div className="work-list">
+            {work.map((item, index) => (
+              <article key={item.title} className="work-row">
+                <div className="work-identity">
+                  <span className="eyebrow">0{index + 1} / WordPress</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                </div>
+                <div className="work-detail">
+                  {item.paragraphs.map((text) => (
+                    <p key={text}>{text}</p>
+                  ))}
+                  {item.href && (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-link"
+                    >
+                      Visit website <span aria-hidden="true">↗</span>
+                      <span className="sr-only"> — {item.title}</span>
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
       <section
         id="experience"
         aria-labelledby="experience-heading"
-        className="flex flex-col gap-5"
+        className="portfolio-section"
       >
-        <div className="flex flex-col gap-1.5">
-          <h2 id="experience-heading" className={headingClass}>
-            Experience
-          </h2>
-          <p className="text-zinc-600">
+        <SectionHeading
+          number="04"
+          title="Experience"
+          id="experience-heading"
+        />
+        <div className="section-body">
+          <p className="section-intro">
             Some of the teams I&apos;ve worked with.
           </p>
+          <div className="experience-list">
+            {experience.map((item) => (
+              <article key={item.team} className="experience-item">
+                <div className="experience-title">
+                  <h3>{item.role}</h3>
+                  <p>{item.team}</p>
+                </div>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        {experience.map((item) => (
-          <article
-            key={item.team}
-            className="flex flex-col gap-2 border-b border-zinc-200 pb-5 last:border-0 last:pb-0"
-          >
-            <h3 className="font-semibold text-foreground">{item.role}</h3>
-            <p className="text-sm font-medium text-zinc-600">{item.team}</p>
-            <p className="text-sm leading-6 text-zinc-600">
-              {item.description}
-            </p>
-          </article>
-        ))}
       </section>
       <section
         id="technologies"
         aria-labelledby="technologies-heading"
-        className="flex flex-col gap-5"
+        className="portfolio-section"
       >
-        <div className="flex flex-col gap-1.5">
-          <h2 id="technologies-heading" className={headingClass}>
-            Tools &amp; Technologies
-          </h2>
-          <p className="text-zinc-600">
+        <SectionHeading
+          number="05"
+          title="My toolkit"
+          id="technologies-heading"
+        />
+        <div className="section-body">
+          <p className="section-intro">
             Technologies I use across client work and personal projects.
           </p>
+          <dl className="toolkit">
+            {technologies.map((item) => (
+              <div key={item.category}>
+                <dt>{item.category}</dt>
+                <dd>
+                  {item.items.split(", ").map((tool) => (
+                    <span key={tool}>{tool}</span>
+                  ))}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
-        <dl className="flex flex-col gap-4">
-          {technologies.map((item) => (
-            <div key={item.category} className="flex flex-col gap-1">
-              <dt className="text-sm font-semibold text-foreground">
-                {item.category}
-              </dt>
-              <dd className="text-sm leading-6 text-zinc-600">{item.items}</dd>
-            </div>
-          ))}
-        </dl>
       </section>
       <section
         id="contact"
         aria-labelledby="contact-heading"
-        className="flex flex-col gap-5 border-t border-zinc-200 pt-8"
+        className="portfolio-section contact-section"
       >
-        <h2 id="contact-heading" className={headingClass}>
-          Contact
-        </h2>
-        <h3 className="text-2xl font-semibold tracking-tight">
-          Have something in mind?
-        </h3>
-        <p className="leading-7 text-zinc-600">
-          I&apos;m always interested in connecting with people working on
-          interesting projects.
-        </p>
-        <p className="leading-7 text-zinc-600">
-          Whether you need help with a WordPress website, want to collaborate on
-          a project, or just want to talk about something you&apos;re building,
-          feel free to reach out.
-        </p>
-        <a
-          href={`mailto:${contact.email}`}
-          className="w-fit border border-zinc-300 px-5 py-3 font-mono text-sm hover:border-zinc-500 hover:bg-zinc-50"
-        >
-          Get in Touch <span aria-hidden="true">↗</span>
-        </a>
-        <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
-          <a className="hover:text-foreground" href={`mailto:${contact.email}`}>
+        <SectionHeading number="06" title="Contact" id="contact-heading" />
+        <div className="section-body">
+          <h3>
+            Have something
+            <br />
+            in mind<span className="name-period">?</span>
+          </h3>
+          <p>
+            I&apos;m always interested in connecting with people working on
+            interesting projects.
+          </p>
+          <p>
+            Whether you need help with a WordPress website, want to collaborate
+            on a project, or just want to talk about something you&apos;re
+            building, feel free to reach out.
+          </p>
+          <a href={`mailto:${contact.email}`} className="contact-email">
             {contact.email}
+            <span aria-hidden="true">↗</span>
           </a>
-          <a
-            className="hover:text-foreground"
-            href={`mailto:${contact.alternateEmail}`}
-          >
-            {contact.alternateEmail}
-          </a>
-          <a
-            className="hover:text-foreground"
-            href={contact.upwork}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Upwork ↗
-          </a>
+          <div className="contact-alternatives">
+            <a href={`mailto:${contact.alternateEmail}`}>
+              {contact.alternateEmail}
+            </a>
+            <a href={contact.upwork} target="_blank" rel="noopener noreferrer">
+              Find me on Upwork ↗
+            </a>
+          </div>
+          <p className="social-caption">
+            You can also find me on LinkedIn, GitHub, and X.
+          </p>
+          <SocialLinks />
         </div>
-        <p className="text-sm text-zinc-600">
-          You can also find me on LinkedIn, GitHub, and X.
-        </p>
-        <SocialLinks />
       </section>
-    </div>
+    </>
   );
 }
