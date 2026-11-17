@@ -1,3 +1,4 @@
+import { DynamicYear } from "@/components/dynamic-year";
 import localFont from "next/font/local";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s · Thein Marma",
   },
   description:
-    "WordPress developer and SaaS builder based in Bangladesh. 4+ years building websites for clients worldwide. Currently building Whatisdue and aaine.",
+    "WordPress developer and SaaS builder based in Bangladesh. Building websites for clients worldwide since 2022. Currently building Whatisdue and aaine.",
   robots: { index: false, follow: false },
   icons: { icon: "/icon.svg" },
 };
@@ -60,7 +61,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {children}
           </main>
           <footer className="site-footer">
-            <span>© 2026 Thein Marma. Built with care.</span>
+            <span>
+              © <DynamicYear initialYear={new Date().getFullYear()} /> Thein
+              Marma. Built with care.
+            </span>
             <a href="#main-content">
               Back to top <span aria-hidden="true">↑</span>
             </a>

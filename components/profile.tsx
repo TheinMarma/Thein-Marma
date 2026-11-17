@@ -1,4 +1,5 @@
-import { profile, contact } from "@/data/portfolio";
+import { DynamicYear } from "./dynamic-year";
+import { profile, contact, experienceStartYear } from "@/data/portfolio";
 import { SocialLinks } from "./social-links";
 
 export function Profile() {
@@ -15,7 +16,19 @@ export function Profile() {
       </div>
       <div className="hero-copy">
         {profile.introduction.map((text) => (
-          <p key={text}>{text}</p>
+          <p key={text}>
+            {text.split("{experienceYears}").map((part, index) => (
+              <span key={index}>
+                {index > 0 && (
+                  <DynamicYear
+                    initialYear={new Date().getFullYear()}
+                    since={experienceStartYear}
+                  />
+                )}
+                {part}
+              </span>
+            ))}
+          </p>
         ))}
         <div className="hero-actions">
           <a href={`mailto:${contact.email}`} className="button-primary">

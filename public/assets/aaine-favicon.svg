@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Aaine app icon: the lockup's tile, cropped — so the icon and the logo are
+       one drawing. Placement is the lockup's own, scaled by 64/34.8: the letter
+       was previously 2.8px left of and 1.5px above where the lockup puts it,
+       which is visible at 16px. -->
+  <rect width="64" height="64" rx="11.03" fill="#0F2A47"/>
+  <text x="32.83" y="47.91" text-anchor="middle" font-family="'Bricolage Grotesque', Geist, ui-sans-serif, system-ui, sans-serif" font-size="55.17" font-weight="600" textLength="31.8" lengthAdjust="spacingAndGlyphs" fill="#F5F1E7">a</text>
+</svg>

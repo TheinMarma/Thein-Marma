@@ -1,9 +1,12 @@
+// Year-based estimate, matching the original 4+ years in 2026.
+export const experienceStartYear = 2022;
+
 export const profile = {
   name: "Thein Marma",
   role: "WordPress Developer & SaaS Builder",
   introduction: [
     "I'm a WordPress developer who builds websites for clients and software products of my own.",
-    "With 4+ years of experience working with agencies, businesses, and direct clients, I focus on creating websites that are functional, easy to manage, and built to last.",
+    "With {experienceYears}+ years of experience working with agencies, businesses, and direct clients, I focus on creating websites that are functional, easy to manage, and built to last.",
     "Beyond client work, I enjoy turning everyday problems into useful software. I'm currently building Whatisdue and aaine.",
   ],
   location: "Based in Bangladesh · Working with clients worldwide",

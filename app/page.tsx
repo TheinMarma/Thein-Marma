@@ -1,8 +1,10 @@
+import { DynamicYear } from "@/components/dynamic-year";
 import { Profile } from "@/components/profile";
 import { ContentCard } from "@/components/content-card";
 import { SectionHeading } from "@/components/section-heading";
 import { SocialLinks } from "@/components/social-links";
 import {
+  experienceStartYear,
   about,
   products,
   work,
@@ -26,7 +28,13 @@ export default function HomePage() {
             <p key={text}>{text}</p>
           ))}
           <div className="about-note">
-            <span className="note-number">4+</span>
+            <span className="note-number">
+              <DynamicYear
+                initialYear={new Date().getFullYear()}
+                since={experienceStartYear}
+              />
+              +
+            </span>
             <span>
               Years building websites
               <br />
