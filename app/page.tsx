@@ -3,6 +3,7 @@ import { Profile } from "@/components/profile";
 import { ContentCard } from "@/components/content-card";
 import { SectionHeading } from "@/components/section-heading";
 import { SocialLinks } from "@/components/social-links";
+import { Analytics } from "@vercel/analytics/next"
 import {
   experienceStartYear,
   about,
@@ -198,3 +199,5 @@ export default function HomePage() {
     </>
   );
 }
+
+<Analytics/>
