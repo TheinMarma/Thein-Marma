@@ -42,3 +42,4 @@ The existing Sites deployment uses `.openai/hosting.json`; preserve its project 
 - `app/fonts/` — self-hosted IBM Plex Sans and IBM Plex Mono, loaded through `next/font/local`, with their licenses.
 
 Get in Touch opens an email to hello@theinmarma.dev. The Contact section also includes the alternate email and Upwork profile.
+# Thein-Marma
