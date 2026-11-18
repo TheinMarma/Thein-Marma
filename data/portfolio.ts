@@ -22,6 +22,7 @@ export const about = [
 export const products = [
   {
     title: "Whatisdue",
+    icon: "/assets/favicon.svg",
     subtitle: "Client payment tracking for freelancers.",
     paragraphs: [
       "A SaaS product I built to help freelancers manage clients, projects, and payments in one place.",
@@ -31,6 +32,7 @@ export const products = [
   },
   {
     title: "aaine",
+    icon: "/assets/aaine-favicon.svg",
     subtitle: "Helping lawyers build and manage their practice.",
     paragraphs: [
       "A platform designed to help lawyers establish their online presence, get discovered by potential clients, manage leads, and organize their practice.",
@@ -42,35 +44,60 @@ export const products = [
 
 export const work = [
   {
-    title: "ILACO Financial",
-    subtitle: "Business financing website",
+    title: "Roof Repairs Winchester",
+    subtitle: "Roofing & Home Services",
     paragraphs: [
-      "A WordPress website for a financial services business, featuring financing solutions, service information, and a clear path for potential clients to make inquiries.",
+      "A professional roofing services website showcasing roof repairs, chimney work, gutter services, and emergency roofing solutions, with a focus on service inquiries and quote requests.",
     ],
-    href: "https://ilacofinancial.com",
+    href: "https://roofrepairswinchester.co.uk/",
+  },
+  {
+    title: "Mark Family Insurance",
+    subtitle: "Insurance & Financial Services",
+    paragraphs: [
+      "A business insurance website presenting commercial coverage options, service information, and a straightforward process for requesting insurance quotes.",
+    ],
+    href: "https://markfamilyinsurance.com/",
+  },
+  {
+    title: "David Flanders",
+    subtitle: "Therapy & Mental Health",
+    paragraphs: [
+      "A personal practice website highlighting therapy services, areas of specialization, and consultation booking through a clean, approachable design.",
+    ],
+    href: "https://davidcflanders.com/",
+  },
+  {
+    title: "Speak to Inspire",
+    subtitle: "Coaching & Professional Development",
+    paragraphs: [
+      "A coaching and training website featuring executive communication programs, public speaking coaching, online courses, and corporate workshops.",
+    ],
+    href: "https://speaktoinspire.com/",
   },
   {
     title: "The Printed Copy",
-    subtitle: "Business website",
+    subtitle: "Printing & Business Services",
     paragraphs: [
-      "WordPress development work focused on presenting the company's services through a clean, accessible, and easy-to-navigate website.",
+      "A printing services website showcasing printing solutions, service galleries, and convenient ways for customers to request quotes and place orders.",
     ],
-    href: "https://theprintedcopy.com",
+    href: "https://theprintedcopy.com/",
   },
   {
-    title: "JMG Digital Studios",
-    subtitle: "Digital agency website",
+    title: "US Bio Cleaning",
+    subtitle: "Cleaning & Home Services",
     paragraphs: [
-      "Website development and improvements for a digital services agency, including layout implementation and content updates.",
+      "A professional cleaning services website highlighting residential, commercial, construction, and event cleaning services, with clear service information and estimate requests.",
     ],
+    href: "https://www.theusbiocleaning.com/",
   },
   {
-    title: "Alan Russell Foundation",
-    subtitle: "Nonprofit website",
+    title: "ILACO Financial",
+    subtitle: "Business Financing & Financial Services",
     paragraphs: [
-      "WordPress development and website improvements for a nonprofit organization, supporting its mission, sponsorship information, and online presence.",
+      "A business financing website presenting funding solutions, financial services, and a structured application process for businesses seeking financing.",
     ],
-    href: "https://alanrussellfoundation.org",
+    href: "https://ilacofinancial.com/",
   },
 ];
 

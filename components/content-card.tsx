@@ -1,5 +1,8 @@
+import Image from "next/image";
+
 export type PortfolioItem = {
   title: string;
+  icon: string;
   subtitle: string;
   paragraphs: string[];
   href?: string;
@@ -15,9 +18,13 @@ export function ContentCard({
   return (
     <article className="product-card">
       <div className="product-card-top">
-        <span className="product-symbol" aria-hidden="true">
-          {index === 0 ? "w/" : "aa"}
-        </span>
+        <Image
+          src={item.icon}
+          alt=""
+          width={42}
+          height={42}
+          className="product-symbol"
+        />
         <span className="eyebrow">Product / 0{index + 1}</span>
       </div>
       <h3>{item.title}</h3>

@@ -65,10 +65,11 @@ export default function HomePage() {
         aria-labelledby="work-heading"
         className="portfolio-section"
       >
-        <SectionHeading number="03" title="Selected work" id="work-heading" />
+        <SectionHeading number="03" title="Selected Work" id="work-heading" />
         <div className="section-body">
           <p className="section-intro">
-            A few websites I&apos;ve worked on for clients and businesses.
+            I&apos;ve built 100+ websites for clients across different
+            industries. Here are a few of my selected projects.
           </p>
           <div className="work-list">
             {work.map((item, index) => (
