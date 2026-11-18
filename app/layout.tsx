@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   description:
     "WordPress developer and SaaS builder based in Bangladesh. Building websites for clients worldwide since 2022. Currently building Whatisdue and aaine.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   icons: { icon: "/icon.svg" },
 };
 
