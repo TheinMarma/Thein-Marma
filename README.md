@@ -36,7 +36,7 @@ The existing Sites deployment uses `.openai/hosting.json`; preserve its project 
 - `components/` — shared navigation, profile, cards, and social links.
 - `app/layout.tsx` — metadata and footer.
 - `app/globals.css` — Tailwind theme and global styles.
-- `app/icon.svg` — TM monogram favicon.
+- `app/icon.svg` — circular profile-photo favicon.
 - `public/assets/` — Whatisdue and aaine SVG icons.
 - `components/dynamic-year.tsx` — browser-updated copyright year and experience counts. The experience start year is configured in `data/portfolio.ts` (currently 2022).
 - `app/fonts/` — self-hosted IBM Plex Sans and IBM Plex Mono, loaded through `next/font/local`, with their licenses.
