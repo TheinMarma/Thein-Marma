@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navigation } from "@/components/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const plexSans = localFont({
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </a>
           </footer>
         </div>
+        <Analytics />
       </body>
     </html>
   );
