@@ -10,3 +10,7 @@ dist/
 *.tar.gz
 
 *-preview.png
+
+
+*.next.config.*
+next.config.compiled.js
