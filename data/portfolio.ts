@@ -147,7 +147,7 @@ export const socialLinks = [
   { name: "X", href: "https://x.com/TheinMarma" },
 ];
 export const contact = {
-  email: "hello@theinmarma.dev",
+  email: "hello@theinmarma.com",
   alternateEmail: "theinmarma7@gmail.com",
   upwork: "https://www.upwork.com/freelancers/theinmarma",
 };
